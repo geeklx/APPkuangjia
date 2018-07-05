@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="base_language">en</string>
+    <string name="expect">to be continue</string>
+    <string name="cancel">cancel</string>
+    <string name="ok">sure</string>
+    <string name="loading">loading....</string>
+    <string name="network_error">网络异常，请检查网络连接！</string>
+    <string name="retry_text">try</string>
+    <string name="back">back</string>
+    <string name="search">search</string>
+    <string name="search_result">search result</string>
+
+    <string name="toast_message">Toast message</string>
+
+
+    <string name="soft_update_no">已经是最新版本</string>
+    <string name="soft_update_title">软件更新</string>
+    <string name="soft_update_info">检测到新版本，立即更新吗</string>
+    <string name="soft_update_updatebtn">更新</string>
+    <string name="soft_update_later">稍后更新</string>
+    <string name="soft_updating">正在更新</string>
+    <string name="soft_update_cancel">取消</string>
+
+    <string name="pref_key_transition_time1" translatable="false">pref_key_transition_time1</string>
+    <string name="pref_key_transition_time2" translatable="false">pref_key_transition_time2</string>
+    <string name="btn_smooth_scroll">Smooth scroll</string>
+    <string name="btn_transition_time">Transition time</string>
+    <string name="shop_search_header">海尔酒知道</string>
+
+    <!--<string name="close">close</string>-->
+    <!--<string name="add">ADD</string>-->
+    <!--<string name="remove">REMOVE</string>-->
+    <!--<string name="clear">CLEAR</string>-->
+    <string name="zly_tips">Li-ying zhao, born on October 16, 1987 in langfang city, hebei province, and film and television actress in mainland China.
+        In 2006, due to yahoo search star feng group game championship into show business; That same year, on commercials directed by feng xiaogang in the kneeling clan as a heroine.
+        In 2007, starring in individual first movie "dart line of the peony pavilion". In 2011, in costume dramas "the new princess huanzhu" plays and sunny
+        Know the audience. In 2013, relying on costume dramas "Liu Zhen legend" get more attention. In October 2014, held in 10th golden eagle TV festival
+        Voting activity was selected as the "golden goddess"; In December, with urban love drama "shanshan came" won the fifth national opera festival\'s most popular on the mainland
+        Actress; Founded in the same year, the sea of medium li-ying zhao studio. \n\n
+        Li-ying zhao, born on October 16, 1987 in langfang city, hebei province, and film and television actress in mainland China.
+        In 2006, due to yahoo search star feng group game championship into show business; That same year, on commercials directed by feng xiaogang in the kneeling clan as a heroine.
+        In 2007, starring in individual first movie "dart line of the peony pavilion". In 2011, in costume dramas "the new princess huanzhu" plays in the corner of sunny and is regarded by the audience
+        Knowledge. In 2013, relying on costume dramas "Liu Zhen legend" get more attention. In October 2014, the voting in 10th golden eagle TV festival activity was selected
+        As a "golden goddess"; In December, with urban love drama "shanshan came" won the fifth national opera festival's most popular on the mainland actress; Founded in the same year, the sea embellish
+        Media li-ying zhao studio.\n\n
+        Li-ying zhao, born on October 16, 1987 in langfang city, hebei province, and film and television actress in mainland China.
+        In 2006, due to yahoo search star feng group game championship into show business; That same year, on commercials directed by feng xiaogang in the kneeling clan as a heroine.
+        In 2007, starring in individual first movie "dart line of the peony pavilion". In 2011, in costume dramas "the new princess huanzhu" plays in one corner of the sunny and know the audience.
+        In 2013, relying on costume dramas "Liu Zhen legend" get more attention. In October 2014, the voting in 10th golden eagle TV festival activity was selected as the "golden goddess";
+        In December, with urban love drama "shanshan came" won the fifth national opera festival's most popular on the mainland actress; Founded in the same year, the sea of medium li-ying zhao studio.\n\n
+
+    </string>
+    <string name="language_cn">中文</string>
+    <string name="language_en">ENGLISH</string>
+    <string name="language_auto">自动</string>
+    <string name="language_traditional">繁體</string>
+    <string name="language_select">Currently selected language:  %s</string>
+    <string name="system_language">Current system language: %1$s</string>
+    <string name="user_select_language">Current user selects language: %s</string>
+
+</resources>

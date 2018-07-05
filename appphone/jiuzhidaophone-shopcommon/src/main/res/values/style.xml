@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="shop_cate_list_title">
+        <item name="android:textColor">@drawable/cate_list_title_text_selector</item>
+        <item name="android:textSize">@dimen/text_size_18</item>
+    </style>
+</resources>
