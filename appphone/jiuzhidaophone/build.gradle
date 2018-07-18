@@ -93,9 +93,12 @@ dependencies {
     implementation(name: 'libutils', ext: 'aar')
     implementation(name: 'libglide37', ext: 'aar')
     implementation(name: 'libwebview', ext: 'aar')
+    implementation(name: 'librararyforfileprovdider', ext: 'aar')
     implementation(name: 'libglin', ext: 'aar')
     implementation(name: 'libretrofit', ext: 'aar')
     implementation(name: 'uSDK4.4.04', ext: 'aar')
+    // assetsfitandroid
+    implementation 'com.blankj:utilcode:1.17.2'
 
     implementation project(':appphone:jiuzhidaophone-index')
     implementation project(':appphone:jiuzhidaophone-share')

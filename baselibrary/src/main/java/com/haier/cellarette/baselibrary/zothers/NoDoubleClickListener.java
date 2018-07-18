@@ -10,7 +10,7 @@ import java.util.Calendar;
 
 public abstract class NoDoubleClickListener implements View.OnClickListener {
 
-    public long MIN_CLICK_DELAY_TIME = 2000;
+    public long MIN_CLICK_DELAY_TIME = 1000;
     private long lastClickTime = 0;
     private long no_doule_time;
 
@@ -38,6 +38,7 @@ public abstract class NoDoubleClickListener implements View.OnClickListener {
         if (i != 0) {
            MIN_CLICK_DELAY_TIME = i;
         }
+
     }
 
     /**
@@ -55,9 +56,9 @@ public abstract class NoDoubleClickListener implements View.OnClickListener {
         long currentTime = Calendar.getInstance().getTimeInMillis();
         if (currentTime - lastClickTime > MIN_CLICK_DELAY_TIME) {
             lastClickTime = currentTime;
-            onSingleClick(v);
-        }else {
             onDoubleClick(v);
+        }else {
+            onSingleClick(v);
         }
 //        Object tag = v.getTag(v.getId());
 //        long beforeTimemiles = tag != null ? (long) tag : 0;
@@ -70,7 +71,7 @@ public abstract class NoDoubleClickListener implements View.OnClickListener {
 //        }
     }
 
-    public boolean isDoubleClick(View v, long no_doule_time) {
+    public static boolean isDoubleClick(View v, long no_doule_time) {
         Object tag = v.getTag(v.getId());
         long beforeTimemiles = tag != null ? (long) tag : 0;
         long timeInMillis = Calendar.getInstance().getTimeInMillis();

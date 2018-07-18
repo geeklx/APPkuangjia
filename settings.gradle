@@ -1,4 +1,4 @@
-//include ':app'
+include ':app'
 
 // start aar
 
@@ -26,6 +26,8 @@ include ':commonlibs',
         ':commonlibs:libretrofit',
         ':commonlibs:libvariants',
         ':commonlibs:libwebview',
+        ':commonlibs:librararyforfileprovdider',
+        ':commonlibs:libupdateapputils',
         ':commonlibs:libmvp'
 
 // end commonlibs

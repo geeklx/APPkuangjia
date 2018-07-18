@@ -2,20 +2,17 @@ package com.haier.cellarette.baselibrary.baseactivitys;
 
 import android.Manifest;
 import android.annotation.TargetApi;
-import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.provider.Settings;
-import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.blankj.utilcode.util.Utils;
 import com.haier.cellarette.baselibrary.R;
 
 import java.lang.reflect.Method;
@@ -252,11 +249,19 @@ public abstract class CheckPermissionsActivity extends BaseActivity {
      * @since 2.5.0
      */
     private void startAppSettings() {
-        Intent intent = new Intent();
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            intent.setAction(Settings.ACTION_MANAGE_UNKNOWN_APP_SOURCES);
+            // 跳到列表
+//            Intent intent = new Intent();
+//            intent.setAction(Settings.ACTION_MANAGE_UNKNOWN_APP_SOURCES);
+//            startActivityForResult(intent, 10086);
+            // 跳到单一bufen
+            Uri packageURI = Uri.parse("package:" + Utils.getApp().getPackageName());
+            //注意这个是8.0新API
+            Intent intent = new Intent(Settings.ACTION_MANAGE_UNKNOWN_APP_SOURCES, packageURI);
             startActivityForResult(intent, 10086);
         } else {
+            Intent intent = new Intent();
             intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
             intent.setData(Uri.parse("package:" + getPackageName()));
             startActivity(intent);

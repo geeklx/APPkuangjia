@@ -17,10 +17,10 @@ public class MusicUtil implements MediaPlayer.OnPreparedListener, MediaPlayer.On
         this.mContext = mContext;
     }
 
-    public static MusicUtil getInstance(Context context){
-        if (instance==null){
-            synchronized (MusicUtil.class){
-                if (instance==null){
+    public static MusicUtil getInstance(Context context) {
+        if (instance == null) {
+            synchronized (MusicUtil.class) {
+                if (instance == null) {
                     instance = new MusicUtil(context);
                 }
             }
@@ -35,7 +35,7 @@ public class MusicUtil implements MediaPlayer.OnPreparedListener, MediaPlayer.On
         }
         try {
             mediaPlayer.reset();
-            mediaPlayer.setDataSource(mContext, Uri.parse("android.resource://" + mContext.getPackageName() + "/" +uri));
+            mediaPlayer.setDataSource(mContext, Uri.parse("android.resource://" + mContext.getPackageName() + "/" + uri));
             mediaPlayer.prepare();
             mediaPlayer.start();
         } catch (IOException e) {
@@ -55,9 +55,10 @@ public class MusicUtil implements MediaPlayer.OnPreparedListener, MediaPlayer.On
     }
 
     public void MusicDestory() {
-        if (null != mediaPlayer && mediaPlayer.isPlaying()) {
+        if (null != mediaPlayer) {
             mediaPlayer.stop();
             mediaPlayer.release();
+            mediaPlayer = null;
         }
     }
 

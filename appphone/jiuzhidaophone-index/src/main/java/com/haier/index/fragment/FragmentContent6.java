@@ -9,9 +9,11 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.github.commonlibs.libupdateapputils.util.UpdateAppReceiver;
 import com.haier.cellarette.baselibrary.baseactivitys.BaseFragment;
 import com.haier.cellarette.baselibrary.glidenetpicpressnormal.SelectorUtil;
 import com.haier.cellarette.baselibrary.toasts2.Toasty;
+import com.haier.cellarette.libwebview.DemoWebviewMainActivity;
 import com.haier.index.R;
 
 public class FragmentContent6 extends BaseFragment {
@@ -35,6 +37,8 @@ public class FragmentContent6 extends BaseFragment {
     private TextView tv15;
     private TextView tv16;
     private TextView tv17;
+    private TextView tv18;
+    private TextView tv19;
     private TextView tv1_demo1;
     private ImageView iv1;
 
@@ -68,6 +72,8 @@ public class FragmentContent6 extends BaseFragment {
         tv15 = rootView.findViewById(R.id.tv_MusicActivity);
         tv16 = rootView.findViewById(R.id.tv_uploadpic);
         tv17 = rootView.findViewById(R.id.tv_expandableview);
+        tv18 = rootView.findViewById(R.id.tv_assetsMainActivity);
+        tv19 = rootView.findViewById(R.id.tv_shoppingcar);
         tv1_demo1 = rootView.findViewById(R.id.tv1_demo1);
         iv1 = rootView.findViewById(R.id.iv_glidenetpicpressnormal);
         iv1.setOnClickListener(new View.OnClickListener() {
@@ -178,6 +184,18 @@ public class FragmentContent6 extends BaseFragment {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent("hs.act.phone.expandableview"));
+            }
+        });
+        tv18.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent("hs.act.AssetsMainActivity"));
+            }
+        });
+        tv19.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent("hs.act.ShoppingCarActivity"));
             }
         });
         new Handler().postDelayed(new Runnable() {

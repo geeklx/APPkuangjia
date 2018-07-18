@@ -28,6 +28,7 @@ public class DemoWebviewMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_webviewmain);
 //        configHios();
+        String change1 = "change1";
         init();
     }
 

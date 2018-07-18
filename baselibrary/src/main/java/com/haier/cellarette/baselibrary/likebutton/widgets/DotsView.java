@@ -118,7 +118,7 @@ public class DotsView extends View {
 
     private void updateInnerDotsPosition() {
         if (currentProgress < 0.3f) {
-            this.currentRadius2 = (float) Utils.mapValueFromRangeToRange(currentProgress, 0, 0.3f, 0.f, maxInnerDotsRadius);
+            this.currentRadius2 = (float) LikeButtonUtils.mapValueFromRangeToRange(currentProgress, 0, 0.3f, 0.f, maxInnerDotsRadius);
         } else {
             this.currentRadius2 = maxInnerDotsRadius;
         }
@@ -127,37 +127,37 @@ public class DotsView extends View {
         } else if (currentProgress < 0.2) {
             this.currentDotSize2 = maxDotSize;
         } else if (currentProgress < 0.5) {
-            this.currentDotSize2 = (float) Utils.mapValueFromRangeToRange(currentProgress, 0.2f, 0.5f, maxDotSize, 0.3 * maxDotSize);
+            this.currentDotSize2 = (float) LikeButtonUtils.mapValueFromRangeToRange(currentProgress, 0.2f, 0.5f, maxDotSize, 0.3 * maxDotSize);
         } else {
-            this.currentDotSize2 = (float) Utils.mapValueFromRangeToRange(currentProgress, 0.5f, 1f, maxDotSize * 0.3f, 0);
+            this.currentDotSize2 = (float) LikeButtonUtils.mapValueFromRangeToRange(currentProgress, 0.5f, 1f, maxDotSize * 0.3f, 0);
         }
 
     }
 
     private void updateOuterDotsPosition() {
         if (currentProgress < 0.3f) {
-            this.currentRadius1 = (float) Utils.mapValueFromRangeToRange(currentProgress, 0.0f, 0.3f, 0, maxOuterDotsRadius * 0.8f);
+            this.currentRadius1 = (float) LikeButtonUtils.mapValueFromRangeToRange(currentProgress, 0.0f, 0.3f, 0, maxOuterDotsRadius * 0.8f);
         } else {
-            this.currentRadius1 = (float) Utils.mapValueFromRangeToRange(currentProgress, 0.3f, 1f, 0.8f * maxOuterDotsRadius, maxOuterDotsRadius);
+            this.currentRadius1 = (float) LikeButtonUtils.mapValueFromRangeToRange(currentProgress, 0.3f, 1f, 0.8f * maxOuterDotsRadius, maxOuterDotsRadius);
         }
         if (currentProgress == 0) {
             this.currentDotSize1 = 0;
         } else if (currentProgress < 0.7) {
             this.currentDotSize1 = maxDotSize;
         } else {
-            this.currentDotSize1 = (float) Utils.mapValueFromRangeToRange(currentProgress, 0.7f, 1f, maxDotSize, 0);
+            this.currentDotSize1 = (float) LikeButtonUtils.mapValueFromRangeToRange(currentProgress, 0.7f, 1f, maxDotSize, 0);
         }
     }
 
     private void updateDotsPaints() {
         if (currentProgress < 0.5f) {
-            float progress = (float) Utils.mapValueFromRangeToRange(currentProgress, 0f, 0.5f, 0, 1f);
+            float progress = (float) LikeButtonUtils.mapValueFromRangeToRange(currentProgress, 0f, 0.5f, 0, 1f);
             circlePaints[0].setColor((Integer) argbEvaluator.evaluate(progress, COLOR_1, COLOR_2));
             circlePaints[1].setColor((Integer) argbEvaluator.evaluate(progress, COLOR_2, COLOR_3));
             circlePaints[2].setColor((Integer) argbEvaluator.evaluate(progress, COLOR_3, COLOR_4));
             circlePaints[3].setColor((Integer) argbEvaluator.evaluate(progress, COLOR_4, COLOR_1));
         } else {
-            float progress = (float) Utils.mapValueFromRangeToRange(currentProgress, 0.5f, 1f, 0, 1f);
+            float progress = (float) LikeButtonUtils.mapValueFromRangeToRange(currentProgress, 0.5f, 1f, 0, 1f);
             circlePaints[0].setColor((Integer) argbEvaluator.evaluate(progress, COLOR_2, COLOR_3));
             circlePaints[1].setColor((Integer) argbEvaluator.evaluate(progress, COLOR_3, COLOR_4));
             circlePaints[2].setColor((Integer) argbEvaluator.evaluate(progress, COLOR_4, COLOR_1));
@@ -174,8 +174,8 @@ public class DotsView extends View {
     }
 
     private void updateDotsAlpha() {
-        float progress = (float) Utils.clamp(currentProgress, 0.6f, 1f);
-        int alpha = (int) Utils.mapValueFromRangeToRange(progress, 0.6f, 1f, 255, 0);
+        float progress = (float) LikeButtonUtils.clamp(currentProgress, 0.6f, 1f);
+        int alpha = (int) LikeButtonUtils.mapValueFromRangeToRange(progress, 0.6f, 1f, 255, 0);
         circlePaints[0].setAlpha(alpha);
         circlePaints[1].setAlpha(alpha);
         circlePaints[2].setAlpha(alpha);

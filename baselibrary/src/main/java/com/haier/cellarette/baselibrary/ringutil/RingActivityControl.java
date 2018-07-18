@@ -40,7 +40,7 @@ public class RingActivityControl {
     public RingActivityControl(Context context, Handler handler) {
         mContext = context;
         settingsContentObserver = new SettingsContentObserver(mContext, handler);
-        audioManager = (AudioManager) BaseApp.get().getSystemService(Context.AUDIO_SERVICE);
+//        audioManager = (AudioManager) BaseApp.get().getSystemService(Context.AUDIO_SERVICE);
     }
 
     /**
@@ -213,7 +213,7 @@ public class RingActivityControl {
 
     /**
      * 判断当前实际是否有声音
-     * （注：当前的规则认为所有seekbar注册的音量类型的当前音量之和大于0，认为是实际是静音情况）
+     * （注：当前的规则认为所有seekbar注册的音量类型的当前音量之和大于0，否则认为是实际是静音情况）
      *
      * @return true：有声音  false：没声音
      */

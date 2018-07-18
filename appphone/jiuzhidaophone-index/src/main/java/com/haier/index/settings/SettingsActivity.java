@@ -6,12 +6,12 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.Nullable;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.github.commonlibs.libupdateapputils.util.UpdateAppUtils;
 import com.haier.cellarette.baselibrary.baseactivitys.BaseActivity;
 import com.haier.cellarette.baselibrary.cacheutil.CacheUtil;
 import com.haier.cellarette.baselibrary.common.BaseApp;
@@ -21,6 +21,9 @@ import com.haier.cellarette.baselibrary.widget.SmoothCheckBox;
 import com.haier.cellarette.baselibrary.widget.SwitchButton;
 import com.haier.cellarette.libwebview.hois2.HiosHelper;
 import com.haier.index.R;
+
+import static com.haier.cellarette.libutils.utilslib.device.DeviceUtil.getVersionCode;
+import static com.haier.cellarette.libutils.utilslib.device.DeviceUtil.getVersionName;
 
 
 /**
@@ -146,11 +149,26 @@ public class SettingsActivity extends BaseActivity implements View.OnClickListen
         } else if (id == R.id.tv_clear_memory) {
             showAlert("确定要清除缓存吗？", 1);
         } else if (id == R.id.tv_check_updates) {
-            if (isUpdate) {//TODO 判断当前版本是否需要更新
-                showAlert("发现最新版本", 2);
-            } else {
-                Toasty.normal(mContext, "已是最新版本").show();
-            }
+//            if (isUpdate) {//TODO 判断当前版本是否需要更新
+//                showAlert("发现最新版本", 2);
+//            } else {
+//                Toasty.normal(mContext, "已是最新版本").show();
+//            }
+            startActivity(new Intent("hs.ac.github.DemoUpdateAppMainActivity"));
+//            //服务器apk path,这里放了百度云盘的apk 作为测试
+//            String apkPath = "http://issuecdn.baidupcs.com/issue/netdisk/apk/BaiduNetdisk_7.15.1.apk";
+//            UpdateAppUtils.from(this)
+//                    .serverVersionCode(getVersionCode(this) + 1)
+//                    .serverVersionName(getVersionName(this))
+//                    .downloadPath("updateapp/" + getPackageName() + ".apk")
+//                    .apkPath(apkPath)
+//                    .downloadBy(UpdateAppUtils.DOWNLOAD_BY_APP)    //default
+//                    .checkBy(UpdateAppUtils.CHECK_BY_VERSION_CODE) //default
+//                    .updateInfoTitle("新版本已准备好")
+//                    .updateInfo("版本：1.01" + "    " + "大小：2.41M\n" + "1.商户加入群聊，在线沟通更方便\n2.配送费专属优惠，下单更便宜\n3.新客加大福利，更多优惠等你来")
+////                .showNotification(false)
+////                .needFitAndroidN(false)
+//                    .update();
         } else if (id == R.id.tv_logout) {
 //            showAlert("你确定退出此账号", 3);
             startActivity(new Intent("hs.act.phone.uploadpic"));
@@ -161,7 +179,7 @@ public class SettingsActivity extends BaseActivity implements View.OnClickListen
         } else if (id == R.id.tv_about) {
             Toasty.normal(this, "tv_about").show();
             HiosHelper.resolveAd(SettingsActivity.this, SettingsActivity.this, "http://pc.jiuzhidao.com/portal/page/index/id/9.html");
-        } else if (id == R.id.tv_volume){
+        } else if (id == R.id.tv_volume) {
             startActivity(new Intent("hs.act.phone.RingActivity"));
         }
     }
@@ -172,22 +190,19 @@ public class SettingsActivity extends BaseActivity implements View.OnClickListen
         if (id == R.id.sb_msg_notice) {
             if (isChecked) {
                 Toasty.normal(this, "sb_msg_notice: checked").show();
-            }
-            else {
+            } else {
                 Toasty.normal(this, "sb_msg_notice: unchecked").show();
             }
         } else if (id == R.id.sb_open_notice) {
             if (isChecked) {
                 Toasty.normal(this, "sb_open_notice: checked").show();
-            }
-            else {
+            } else {
                 Toasty.normal(this, "sb_open_notice: unchecked").show();
             }
         } else if (id == R.id.sb_trouble_notice) {
             if (isChecked) {
                 Toasty.normal(this, "sb_trouble_notice: checked").show();
-            }
-            else {
+            } else {
                 Toasty.normal(this, "sb_trouble_notice: unchecked").show();
             }
         }

@@ -28,7 +28,7 @@ import com.haier.cellarette.baselibrary.likebutton.widgets.Icon;
 import com.haier.cellarette.baselibrary.likebutton.widgets.IconType;
 import com.haier.cellarette.baselibrary.likebutton.widgets.OnAnimationEndListener;
 import com.haier.cellarette.baselibrary.likebutton.widgets.OnLikeListener;
-import com.haier.cellarette.baselibrary.likebutton.widgets.Utils;
+import com.haier.cellarette.baselibrary.likebutton.widgets.LikeButtonUtils;
 
 import java.util.List;
 
@@ -299,7 +299,7 @@ public class LikeButton extends FrameLayout implements View.OnClickListener {
         likeDrawable = ContextCompat.getDrawable(getContext(), resId);
 
         if (iconSize != 0) {
-            likeDrawable = Utils.resizeDrawable(getContext(), likeDrawable, iconSize, iconSize);
+            likeDrawable = LikeButtonUtils.resizeDrawable(getContext(), likeDrawable, iconSize, iconSize);
         }
 
         if (isChecked) {
@@ -316,7 +316,7 @@ public class LikeButton extends FrameLayout implements View.OnClickListener {
         this.likeDrawable = likeDrawable;
 
         if (iconSize != 0) {
-            this.likeDrawable = Utils.resizeDrawable(getContext(), likeDrawable, iconSize, iconSize);
+            this.likeDrawable = LikeButtonUtils.resizeDrawable(getContext(), likeDrawable, iconSize, iconSize);
         }
 
         if (isChecked) {
@@ -333,7 +333,7 @@ public class LikeButton extends FrameLayout implements View.OnClickListener {
         unLikeDrawable = ContextCompat.getDrawable(getContext(), resId);
 
         if (iconSize != 0) {
-            unLikeDrawable = Utils.resizeDrawable(getContext(), unLikeDrawable, iconSize, iconSize);
+            unLikeDrawable = LikeButtonUtils.resizeDrawable(getContext(), unLikeDrawable, iconSize, iconSize);
         }
 
         if (!isChecked) {
@@ -350,7 +350,7 @@ public class LikeButton extends FrameLayout implements View.OnClickListener {
         this.unLikeDrawable = unLikeDrawable;
 
         if (iconSize != 0) {
-            this.unLikeDrawable = Utils.resizeDrawable(getContext(), unLikeDrawable, iconSize, iconSize);
+            this.unLikeDrawable = LikeButtonUtils.resizeDrawable(getContext(), unLikeDrawable, iconSize, iconSize);
         }
 
         if (!isChecked) {
@@ -384,7 +384,7 @@ public class LikeButton extends FrameLayout implements View.OnClickListener {
      */
 
     public void setIconSizeDp(int iconSize) {
-        setIconSizePx((int) Utils.dipToPixels(getContext(), (float) iconSize));
+        setIconSizePx((int) LikeButtonUtils.dipToPixels(getContext(), (float) iconSize));
     }
 
     /**
@@ -396,8 +396,8 @@ public class LikeButton extends FrameLayout implements View.OnClickListener {
     public void setIconSizePx(int iconSize) {
         this.iconSize = iconSize;
         setEffectsViewSize();
-        this.unLikeDrawable = Utils.resizeDrawable(getContext(), unLikeDrawable, iconSize, iconSize);
-        this.likeDrawable = Utils.resizeDrawable(getContext(), likeDrawable, iconSize, iconSize);
+        this.unLikeDrawable = LikeButtonUtils.resizeDrawable(getContext(), unLikeDrawable, iconSize, iconSize);
+        this.likeDrawable = LikeButtonUtils.resizeDrawable(getContext(), likeDrawable, iconSize, iconSize);
     }
 
     /**
@@ -411,7 +411,7 @@ public class LikeButton extends FrameLayout implements View.OnClickListener {
      * @return Icon
      */
     private Icon parseIconType(String iconType) {
-        List<Icon> icons = Utils.getIcons();
+        List<Icon> icons = LikeButtonUtils.getIcons();
 
         for (Icon icon : icons) {
             if (icon.getIconType().name().toLowerCase().equals(iconType.toLowerCase())) {
@@ -432,7 +432,7 @@ public class LikeButton extends FrameLayout implements View.OnClickListener {
      * @return
      */
     private Icon parseIconType(IconType iconType) {
-        List<Icon> icons = Utils.getIcons();
+        List<Icon> icons = LikeButtonUtils.getIcons();
 
         for (Icon icon : icons) {
             if (icon.getIconType().equals(iconType)) {

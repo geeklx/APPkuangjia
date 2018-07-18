@@ -23,6 +23,7 @@ import android.widget.SeekBar;
 
 import com.haier.cellarette.baselibrary.R;
 import com.haier.cellarette.baselibrary.common.BaseApp;
+import com.haier.cellarette.baselibrary.qcode.ExpandViewRect;
 import com.haier.cellarette.baselibrary.widget.SwitchButton;
 
 import java.util.ArrayList;
@@ -72,7 +73,7 @@ public class RingActivity extends AppCompatActivity {
         mMediaSeekBar = findViewById(R.id.sb_vol_media);
         mAlarmSeekBar = findViewById(R.id.sb_vol_alarm);
         mRgRingEffect = findViewById(R.id.rg_ring_effect);
-        expandViewTouchDelegate(mIvExit, 10, 10, 10,10);
+        ExpandViewRect.expandViewTouchDelegate(mIvExit, 10, 10, 10,10);
         //公共控制类的使用
         mRingActivityControl.ringRegisterVolSeekbar(RingActivityControl.SOUND_NOTIFICATION, mNoticeSeekBar);
         mRingActivityControl.ringRegisterVolSeekbar(RingActivityControl.SOUND_MUSIC, mMediaSeekBar);
@@ -122,34 +123,4 @@ public class RingActivity extends AppCompatActivity {
         mRingActivityControl.ringFinishListenSystemVol();
     }
 
-    /**
-     * 扩大View的触摸和点击响应范围,最大不超过其父View范围
-     *
-     * @param view
-     * @param top
-     * @param bottom
-     * @param left
-     * @param right
-     */
-    private void expandViewTouchDelegate(final View view, final int top, final int bottom, final int left, final int right) {
-        ((View) view.getParent()).post(new Runnable() {
-            @Override
-            public void run() {
-                Rect bounds = new Rect();
-                view.setEnabled(true);
-                view.getHitRect(bounds);
-
-                bounds.top -= top;
-                bounds.bottom += bottom;
-                bounds.left -= left;
-                bounds.right += right;
-
-                TouchDelegate touchDelegate = new TouchDelegate(bounds, view);
-
-                if (View.class.isInstance(view.getParent())) {
-                    ((View) view.getParent()).setTouchDelegate(touchDelegate);
-                }
-            }
-        });
-    }
 }

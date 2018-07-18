@@ -1,6 +1,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.haier.cellarette.baselibrary">
 
+    <uses-permission android:name="au.com.example.READ_CONTENT" />
+    <uses-permission android:name="au.com.example.WRITE_CONTENT" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
@@ -12,15 +17,6 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <application>
-        <provider
-            android:name="android.support.v4.content.FileProvider"
-            android:authorities="${applicationId}.android7.fileprovider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths" />
-        </provider>
 
         <receiver android:name=".networkview.NetworkChangeListener" />
         <receiver android:name=".networkview.NetworkConnectChangedReceiver" />
@@ -348,6 +344,37 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".assetsfitandroid.AssetsMainActivity">
+            <intent-filter>
+                <action android:name="hs.act.AssetsMainActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".assetsfitandroid.fileassets.FileAssetsActivity">
+            <intent-filter>
+                <action android:name="hs.act.FileAssetsActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".assetsfitandroid.fileandroid.FitAndroidActivity">
+            <intent-filter>
+                <action android:name="hs.act.FitAndroidActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".shoppingcar.ShoppingCarActivity">
+            <intent-filter>
+                <action android:name="hs.act.ShoppingCarActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
 
     </application>
 

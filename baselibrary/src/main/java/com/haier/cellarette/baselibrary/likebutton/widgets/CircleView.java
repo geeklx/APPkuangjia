@@ -109,8 +109,8 @@ public class CircleView extends View {
     }
 
     private void updateCircleColor() {
-        float colorProgress = (float) Utils.clamp(outerCircleRadiusProgress, 0.5, 1);
-        colorProgress = (float) Utils.mapValueFromRangeToRange(colorProgress, 0.5f, 1f, 0f, 1f);
+        float colorProgress = (float) LikeButtonUtils.clamp(outerCircleRadiusProgress, 0.5, 1);
+        colorProgress = (float) LikeButtonUtils.mapValueFromRangeToRange(colorProgress, 0.5f, 1f, 0f, 1f);
         this.circlePaint.setColor((Integer) argbEvaluator.evaluate(colorProgress, START_COLOR, END_COLOR));
     }
 

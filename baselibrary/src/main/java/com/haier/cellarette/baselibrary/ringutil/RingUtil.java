@@ -26,90 +26,6 @@ public class RingUtil {
     public static final int SOUND_SYSTEM = 6;
 
     /**
-     * 设置通知音效
-     *
-     * @param name 音效名称
-     */
-    public static void shezhi_DefaultRingTone(Context mContext, String name) {
-        RingtoneManager manager = new RingtoneManager(mContext);
-        manager.setType(RingtoneManager.TYPE_NOTIFICATION);
-        Cursor cursor = manager.getCursor();
-        while (cursor.moveToNext()) {
-            String title = cursor.getString(RingtoneManager.TITLE_COLUMN_INDEX);
-            String uri = cursor.getString(RingtoneManager.URI_COLUMN_INDEX) + "/" + cursor.getString(RingtoneManager.ID_COLUMN_INDEX);
-            if (name.equals(title)) {
-                RingtoneManager.setActualDefaultRingtoneUri(mContext, RingtoneManager.TYPE_NOTIFICATION, Uri.parse(uri));
-                ring_uri(mContext, Uri.parse(uri), false);
-            }
-        }
-    }
-
-    /*
-     * 播放铃声
-     * */
-    public static void ring_uri(Context mContext, Uri uri, boolean isDefault) {
-        Uri alert = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-        final MediaPlayer player = new MediaPlayer();
-        try {
-            if (isDefault) {
-                player.setDataSource(mContext, alert);
-            } else {
-                player.setDataSource(mContext, uri);
-            }
-            final AudioManager audioManager = (AudioManager) mContext.getSystemService(Context.AUDIO_SERVICE);
-            if (audioManager.getStreamVolume(AudioManager.STREAM_NOTIFICATION) != 0) {
-                player.setAudioStreamType(AudioManager.STREAM_NOTIFICATION);
-//                player.setLooping(true);
-                player.prepare();
-                player.start();
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-//        new Handler().postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//                player.stop();
-//            }
-//        }, 2000);
-       /* int whichCode = FridgeApplication.getInstance().getSpUtil().getCurrentNotify();
-        playMusic(whichCode, false);*/
-    }
-
-    /*
-     * 播放通知
-     * */
-    public static void ring_uri_msg(Context mContext, Uri uri, boolean isDefault) {
-//        Uri alert = Uri.parse("android.resource://" + FridgeApplication.get().getPackageName() + "/" + R.raw.qiaomen);
-        Uri alert = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
-        final MediaPlayer player = new MediaPlayer();
-        try {
-            if (isDefault) {
-                player.setDataSource(mContext, alert);
-            } else {
-                player.setDataSource(mContext, uri);
-            }
-            final AudioManager audioManager = (AudioManager) mContext.getSystemService(Context.AUDIO_SERVICE);
-            if (audioManager.getStreamVolume(AudioManager.STREAM_ALARM) != 0) {
-                player.setAudioStreamType(AudioManager.STREAM_ALARM);
-//                player.setLooping(true);
-                player.prepare();
-                player.start();
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-//        new Handler().postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//                player.stop();
-//            }
-//        }, 1000);
-       /* int whichCode = FridgeApplication.getInstance().getSpUtil().getCurrentNotify();
-        playMusic(whichCode, false);*/
-    }
-
-    /**
      * 播放指定音效
      * @param mContext
      * @param isDefault
@@ -327,19 +243,4 @@ public class RingUtil {
         Log.e("geekSTREAM_SYSTEM", audioManager.getStreamVolume(AudioManager.STREAM_SYSTEM) + "");
     }
 
-
-    public static void listRingtones(Context mContext) {
-        RingtoneManager manager = new RingtoneManager(mContext);
-        manager.setType(RingtoneManager.TYPE_NOTIFICATION);
-        Cursor cursor = manager.getCursor();
-        while (cursor.moveToNext()) {
-            String title = cursor.getString(RingtoneManager.TITLE_COLUMN_INDEX);
-//            String uri = cursor.getString(RingtoneManager.URI_COLUMN_INDEX);
-            String uri = cursor.getString(RingtoneManager.URI_COLUMN_INDEX) + "/" + cursor.getString(RingtoneManager.ID_COLUMN_INDEX);
-            Log.d(TAG, "titleuri  " + title + "  " + uri);
-           /* Uri newUri = Uri.parse("content://media/internal/audio/media/29");
-            RingtoneManager.setActualDefaultRingtoneUri(this, RingtoneManager.TYPE_NOTIFICATION, newUri);*/
-            // Do something with the title and the URI of ringtone
-        }
-    }
 }

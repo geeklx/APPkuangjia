@@ -6,10 +6,12 @@ import android.os.Environment;
 import android.support.multidex.MultiDex;
 import android.support.multidex.MultiDexApplication;
 
+import com.blankj.utilcode.util.Utils;
 import com.example.shining.libglin.glin.interceptor.IResultInterceptor;
 import com.example.shining.libglin.juhenet.JuheNet;
 import com.example.shining.libglin.net.Net;
 import com.haier.cellarette.baselibrary.changelanguage.LocalManageUtil;
+import com.haier.cellarette.baselibrary.likebutton.widgets.LikeButtonUtils;
 import com.haier.cellarette.libglide37.glide.GlideOptionsFactory;
 import com.haier.cellarette.libretrofit.RetrofitNetNew;
 import com.haier.cellarette.libutils.utilslib.app.MyLogUtil;
@@ -48,6 +50,7 @@ public class AppApplication extends MultiDexApplication {
         configNet(true, new Appdemo1ResultInterceptor());
         configJuheNet(true, new Appdemo1ResultInterceptor());
         configRetrofitNet();
+        Utils.init(this);// com.blankj:utilcode:1.17.3
         //初始化统计
 
         //初始化U+sdk

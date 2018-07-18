@@ -37,6 +37,8 @@ dependencies {
     implementation librarys.fastJson
     implementation librarys.gsonJson
 
+    // updateapk
+    implementation project(':commonlibs:librararyforfileprovdider')
     // three fang likebutton
     implementation 'com.mikepenz:iconics-core:2.9.1@aar'
     implementation 'com.mikepenz:community-material-typeface:1.8.36.1@aar'
@@ -54,6 +56,8 @@ dependencies {
     implementation project(':otherlibs:imagepicker')
     // expandableview
     implementation 'com.drawthink:expandable-recyclerview:0.0.3'
+    // assetsfitandroid
+    implementation 'com.blankj:utilcode:1.17.2'
 
 //    implementation project(':commonlibs:geekutilslibrary')
 //    implementation(name: 'libutils', ext: 'aar')

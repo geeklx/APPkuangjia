@@ -27,9 +27,8 @@ import android.widget.ProgressBar;
 
 import com.haier.cellarette.baselibrary.R;
 import com.haier.cellarette.baselibrary.common.BaseApp;
-import com.haier.cellarette.baselibrary.fileprovider.AndroidFileUtil;
-import com.haier.cellarette.baselibrary.fileprovider.FileProvider7;
 import com.haier.cellarette.baselibrary.toasts2.Toasty;
+import com.zhy.base.fileprovider.AndroidFileUtil;
 
 import java.io.File;
 import java.io.FileOutputStream;
