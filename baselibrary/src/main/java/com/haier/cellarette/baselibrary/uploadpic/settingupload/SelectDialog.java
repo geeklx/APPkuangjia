@@ -41,7 +41,7 @@ public class SelectDialog extends Dialog implements OnClickListener,OnItemClickL
     private int mOtherItemColor;
 
     public interface SelectDialogListener {
-        public void onItemClick(AdapterView<?> parent, View view, int position, long id);
+        void onItemClick(AdapterView<?> parent, View view, int position, long id);
     }
 
 
@@ -52,7 +52,7 @@ public class SelectDialog extends Dialog implements OnClickListener,OnItemClickL
     private SelectDialogCancelListener mCancelListener;
 
     public interface SelectDialogCancelListener {
-        public void onCancelClick(View v);
+        void onCancelClick(View v);
     }
 
     public SelectDialog(Activity activity, int theme,
@@ -140,11 +140,11 @@ public class SelectDialog extends Dialog implements OnClickListener,OnItemClickL
 
     private void initViews() {
         DialogAdapter dialogAdapter=new DialogAdapter(mName);
-        ListView dialogList=(ListView) findViewById(R.id.dialog_list);
+        ListView dialogList= findViewById(R.id.dialog_list);
         dialogList.setOnItemClickListener(this);
         dialogList.setAdapter(dialogAdapter);
-        mMBtn_Cancel = (Button) findViewById(R.id.mBtn_Cancel);
-        mTv_Title = (TextView) findViewById(R.id.mTv_Title);
+        mMBtn_Cancel = findViewById(R.id.mBtn_Cancel);
+        mTv_Title = findViewById(R.id.mTv_Title);
 
 
         mMBtn_Cancel.setOnClickListener(new View.OnClickListener() {
@@ -212,7 +212,7 @@ public class SelectDialog extends Dialog implements OnClickListener,OnItemClickL
             if (null == convertView) {
                 viewholder=new Viewholder();
                 convertView=layoutInflater.inflate(R.layout.view_dialog_item, null);
-                viewholder.dialogItemButton=(TextView) convertView.findViewById(R.id.dialog_item_bt);
+                viewholder.dialogItemButton= convertView.findViewById(R.id.dialog_item_bt);
                 convertView.setTag(viewholder);
             }else{
                 viewholder=(Viewholder) convertView.getTag();

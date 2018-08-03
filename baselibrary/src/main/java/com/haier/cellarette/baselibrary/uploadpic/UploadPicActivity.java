@@ -57,20 +57,21 @@ public class UploadPicActivity extends AppCompatActivity {
 
     private void initImagePicker() {
         ImagePicker imagePicker = ImagePicker.getInstance();
-        imagePicker.setImageLoader(new GlideImageLoader());   //设置图片加载器
-        imagePicker.setShowCamera(true);                      //显示拍照按钮
-        imagePicker.setCrop(true);                           //允许裁剪（单选才有效）
-        imagePicker.setSaveRectangle(true);                   //是否按矩形区域保存
+        imagePicker.setImageLoader(new GlideImageLoader());    //设置图片加载器
+        imagePicker.setShowCamera(true);                       //显示拍照按钮
+        imagePicker.setMultiMode(true);                       //是否多选
+        imagePicker.setCrop(true);                             //允许裁剪（单选才有效）
+        imagePicker.setSaveRectangle(true);                    //是否按矩形区域保存
         imagePicker.setSelectLimit(maxImgCount);              //选中数量限制
         imagePicker.setStyle(CropImageView.Style.RECTANGLE);  //裁剪框的形状
-        imagePicker.setFocusWidth(800);                       //裁剪框的宽度。单位像素（圆形自动取宽高最小值）
-        imagePicker.setFocusHeight(800);                      //裁剪框的高度。单位像素（圆形自动取宽高最小值）
-        imagePicker.setOutPutX(1000);                         //保存文件的宽度。单位像素
-        imagePicker.setOutPutY(1000);                         //保存文件的高度。单位像素
+        imagePicker.setFocusWidth(800);                        //裁剪框的宽度。单位像素（圆形自动取宽高最小值）
+        imagePicker.setFocusHeight(800);                       //裁剪框的高度。单位像素（圆形自动取宽高最小值）
+        imagePicker.setOutPutX(1000);                          //保存文件的宽度。单位像素
+        imagePicker.setOutPutY(1000);                          //保存文件的高度。单位像素
     }
 
     private void initWidget() {
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        RecyclerView recyclerView = findViewById(R.id.recyclerView);
         selImageList = new ArrayList<>();
         adapter = new ImagePickerAdapter(this, selImageList, maxImgCount);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 4));
@@ -110,9 +111,9 @@ public class UploadPicActivity extends AppCompatActivity {
                                         //打开选择,本次允许选择的数量
                                         ImagePicker.getInstance().setSelectLimit(maxImgCount - selImageList.size());
                                         Intent intent1 = new Intent(UploadPicActivity.this, ImageGridActivity.class);
-                                /* 如果需要进入选择的时候显示已经选中的图片，
-                                 * 详情请查看ImagePickerActivity
-                                 * */
+                                        /* 如果需要进入选择的时候显示已经选中的图片，
+                                         * 详情请查看ImagePickerActivity
+                                         * */
 //                                intent1.putExtra(ImageGridActivity.EXTRAS_IMAGES,images);
                                         startActivityForResult(intent1, REQUEST_CODE_SELECT);
                                         break;
@@ -170,6 +171,7 @@ public class UploadPicActivity extends AppCompatActivity {
                 //移除当前图片刷新界面
                 mImageItems = adapter.getImages();
                 mImageItems.remove(mCurrentPosition);
+                selImageList.remove(mCurrentPosition);
                 if (mImageItems.size() >= 0) {
                     adapter.setImages(mImageItems);
                 } else {

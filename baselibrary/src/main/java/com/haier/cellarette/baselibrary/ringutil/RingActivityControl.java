@@ -223,9 +223,7 @@ public class RingActivityControl {
             String type = (String) seekbar.getTag();
             sum += ring_get_sp_current_vol(type);
         }
-        if (sum > 0)
-            return true;
-        return false;
+        return sum > 0;
     }
 
     /**

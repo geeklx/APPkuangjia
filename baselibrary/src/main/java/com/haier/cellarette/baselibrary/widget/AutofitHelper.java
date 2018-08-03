@@ -551,6 +551,6 @@ public class AutofitHelper {
          * This method is called to notify you that the size of the text has changed to
          * {@code textSize} from {@code oldTextSize}.
          */
-        public void onTextSizeChange(float textSize, float oldTextSize);
+        void onTextSizeChange(float textSize, float oldTextSize);
     }
 }

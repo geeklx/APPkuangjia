@@ -18,62 +18,57 @@ public class BaeRecycleViewActivity extends AppCompatActivity {
         findViewById(R.id.tv1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent("com.BaseRecActDemo1.act"));
+                startActivity(new Intent("com.BaseRecActDemo11.act"));
             }
         });
         findViewById(R.id.tv2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent("com.BaseRecActDemo2.act"));
+                startActivity(new Intent("com.BaseRecActDemo22.act"));
             }
         });
         findViewById(R.id.tv3).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent("com.BaseRecActDemo3.act"));
+                startActivity(new Intent("com.BaseRecActDemo33.act"));
             }
         });
         findViewById(R.id.tv4).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent("com.BaseRecActDemo4.act"));
+                startActivity(new Intent("com.BaseRecActDemo44.act"));
             }
         });
         findViewById(R.id.tv5).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent("com.BaseRecActDemo5.act"));
+                startActivity(new Intent("com.BaseRecActDemo55.act"));
             }
         });
         findViewById(R.id.tv6).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent("com.BaseRecActDemo6.act"));
+                startActivity(new Intent("com.BaseRecActDemo66.act"));
             }
         });
         findViewById(R.id.tv7).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent("com.BaseRecActDemo7.act"));
+                startActivity(new Intent("com.BaseRecActDemo77.act"));
             }
         });
         findViewById(R.id.tv8).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent("com.BaseRecActDemo8.act"));
+                startActivity(new Intent("com.BaseRecActDemo88.act"));
             }
         });
         findViewById(R.id.tv9).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent("com.BaseRecActDemo9.act"));
+                startActivity(new Intent("com.BaseRecActDemo99.act"));
             }
         });
-        findViewById(R.id.tv10).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent("com.BaseRecActDemo10.act"));
-            }
-        });
+
     }
 }

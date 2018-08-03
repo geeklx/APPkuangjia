@@ -350,8 +350,8 @@ public class IndexMainActivity extends MyBaseActivity {
         ShowLoadingUtil.onDestory();
         if (!tag_ids.equals(id1)) {
             //设置为选中
-            Biaoge_listBean model = (Biaoge_listBean) mAdapter.getItem(0);
             clearList();
+            Biaoge_listBean model = (Biaoge_listBean) mAdapter.getItem(0);
             model.setEnselect(true);
             mAdapter.setContacts(mList);
             mAdapter.notifyDataSetChanged();

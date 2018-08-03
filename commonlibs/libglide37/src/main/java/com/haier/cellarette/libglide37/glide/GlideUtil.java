@@ -11,9 +11,6 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.resource.bitmap.BitmapTransformation;
 import com.bumptech.glide.load.resource.bitmap.CenterCrop;
-import com.haier.cellarette.libglide37.glide.GlideOptions;
-import com.haier.cellarette.libglide37.glide.GlideOptionsFactory;
-import com.haier.cellarette.libglide37.glide.RoundedCornersTransformation;
 import com.haier.cellarette.libutils.utilslib.app.MyLogUtil;
 
 public class GlideUtil {
@@ -23,7 +20,9 @@ public class GlideUtil {
     }
 
     public static void display(Context context, final ImageView imageView, final String url, GlideOptions op) {
-        if (context == null) { return;}
+        if (context == null) {
+            return;
+        }
         if (context instanceof AppCompatActivity) {
             display((AppCompatActivity) context, imageView, url, op);
             return;
@@ -38,7 +37,9 @@ public class GlideUtil {
     }
 
     public static void display(AppCompatActivity activity, final ImageView imageView, final String url, GlideOptions op) {
-        if (activity == null || activity.isFinishing() || activity.isDestroyed()) { return;}
+        if (activity == null || activity.isFinishing() || activity.isDestroyed()) {
+            return;
+        }
         DrawableRequestBuilder<?> builder = Glide.with(activity).load(url);
         display(builder, imageView, op);
     }
@@ -48,7 +49,9 @@ public class GlideUtil {
     }
 
     public static void display(Fragment fragment, final ImageView imageView, final String url, GlideOptions op) {
-        if (fragment == null || fragment.isRemoving() || fragment.getActivity() == null) { return;}
+        if (fragment == null || fragment.isRemoving() || fragment.getActivity() == null) {
+            return;
+        }
         DrawableRequestBuilder<?> builder = Glide.with(fragment).load(url);
         display(builder, imageView, op);
     }

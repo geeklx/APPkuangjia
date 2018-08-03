@@ -103,11 +103,7 @@ public final class FileApkUtil {
     public static boolean deleteFile(String fileName) {
         File file = new File(fileName);
         if (file.exists() && file.isFile()) { // 如果文件路径所对应的文件存在，并且是一个文件，则直接删除
-            if (file.delete()) {
-                return true;
-            } else {
-                return false;
-            }
+            return file.delete();
         } else {
             return false;
         }

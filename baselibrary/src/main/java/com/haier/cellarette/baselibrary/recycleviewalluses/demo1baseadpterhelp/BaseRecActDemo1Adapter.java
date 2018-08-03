@@ -2,10 +2,12 @@ package com.haier.cellarette.baselibrary.recycleviewalluses.demo1baseadpterhelp;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.text.TextPaint;
 import android.text.style.ClickableSpan;
 import android.view.View;
 import android.widget.TextView;
 
+import com.blankj.utilcode.util.Utils;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.haier.cellarette.baselibrary.R;
@@ -44,6 +46,12 @@ public class BaseRecActDemo1Adapter extends BaseQuickAdapter<BaseRecActDemo1Bean
                 Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.setData(url);
                 mContext.startActivity(intent);
+            }
+
+            @Override
+            public void updateDrawState(TextPaint ds) {
+                ds.setColor(Utils.getApp().getResources().getColor(R.color.red));
+                ds.setUnderlineText(true);
             }
         }).create());
         ((TextView) helper.getView(R.id.brademo1_tweetText)).setMovementMethod(ClickableMovementMethod.getInstance());

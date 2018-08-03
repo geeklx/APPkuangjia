@@ -70,6 +70,7 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.ViewHold
     public void onBindViewHolder(final ViewHolder viewHolder, final int position) {
         final Biaoge_listBean ratings = mratings.get(position);
         //设置图片bufen
+
 //        GlideUtil.display(context, viewHolder.iv_imgurl, ratings.getSku_image(), GlideOptionsFactory.get(GlideOptionsFactory.Type.RADIUS));
 //        Glide.with(context).load(ratings.getSku_image()).skipMemoryCache(true).diskCacheStrategy(DiskCacheStrategy.NONE).into(viewHolder.iv_imgurl);
         viewHolder.tv_content1.setText(ratings.getText_content());

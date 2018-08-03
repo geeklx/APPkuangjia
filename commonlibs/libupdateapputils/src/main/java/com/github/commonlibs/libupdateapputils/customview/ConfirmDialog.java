@@ -28,9 +28,9 @@ public class ConfirmDialog extends Dialog {
 
     private void setCustomDialog() {
         View mView = LayoutInflater.from(getContext()).inflate(R.layout.dialog_confirm, null);
-        sureBtn = (TextView)mView.findViewById(R.id.dialog_confirm_sure);
-        cancleBtn = (TextView)mView.findViewById(R.id.dialog_confirm_cancle);
-        content = (TextView) mView.findViewById(R.id.dialog_confirm_title);
+        sureBtn = mView.findViewById(R.id.dialog_confirm_sure);
+        cancleBtn = mView.findViewById(R.id.dialog_confirm_cancle);
+        content = mView.findViewById(R.id.dialog_confirm_title);
 
 
         sureBtn.setOnClickListener(new View.OnClickListener() {

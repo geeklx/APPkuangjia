@@ -110,10 +110,10 @@ public class ImageFolderAdapter extends BaseAdapter {
         ImageView folderCheck;
 
         public ViewHolder(View view) {
-            cover = (ImageView) view.findViewById(R.id.iv_cover);
-            folderName = (TextView) view.findViewById(R.id.tv_folder_name);
-            imageCount = (TextView) view.findViewById(R.id.tv_image_count);
-            folderCheck = (ImageView) view.findViewById(R.id.iv_folder_check);
+            cover = view.findViewById(R.id.iv_cover);
+            folderName = view.findViewById(R.id.tv_folder_name);
+            imageCount = view.findViewById(R.id.tv_image_count);
+            folderCheck = view.findViewById(R.id.iv_folder_check);
             view.setTag(this);
         }
     }

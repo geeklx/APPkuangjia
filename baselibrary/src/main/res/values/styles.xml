@@ -197,4 +197,5 @@
         <item name="android:windowBackground">@drawable/photo_choose_bg</item>
     </style>
 
+
 </resources>

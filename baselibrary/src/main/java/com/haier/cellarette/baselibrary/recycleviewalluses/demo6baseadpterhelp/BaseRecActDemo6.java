@@ -36,7 +36,7 @@ public class BaseRecActDemo6 extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycleviewallsuses_demo6);
-        mRecyclerView = (RecyclerView) findViewById(R.id.rvlist);
+        mRecyclerView = findViewById(R.id.rvlist);
         mAdapter = new BaseRecActDemo6Adapter(R.layout.activity_recycleviewallsuses_demo6_item, genData());
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setAdapter(mAdapter);

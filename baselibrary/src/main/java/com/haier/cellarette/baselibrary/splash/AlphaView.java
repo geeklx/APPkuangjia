@@ -348,6 +348,12 @@ public class AlphaView extends RelativeLayout implements ViewPager.OnPageChangeL
          */
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
+            //必须要先判断,否则报错:java.lang.IllegalStateException: The specified child already has a parent
+            //ViewGroup的addView（）方法不能添加一个已存在父控件的视图,所以在执行前需要判断要添加的View实例是不是存在父控件.
+            //如果存在父控件,需要其父控件先将该View移除掉,再执行addView
+            if(viewList.get(position).getParent() != null){
+                ((ViewGroup)viewList.get(position).getParent()).removeView(viewList.get(position));
+            }
             container.addView(viewList.get(position));
             return viewList.get(position);
         }

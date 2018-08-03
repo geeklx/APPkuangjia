@@ -42,7 +42,7 @@ public class FolderPopUpWindow extends PopupWindow implements View.OnClickListen
         masker.setOnClickListener(this);
         marginView = view.findViewById(R.id.margin);
         marginView.setOnClickListener(this);
-        listView = (ListView) view.findViewById(R.id.listView);
+        listView = view.findViewById(R.id.listView);
         listView.setAdapter(adapter);
 
         setContentView(view);

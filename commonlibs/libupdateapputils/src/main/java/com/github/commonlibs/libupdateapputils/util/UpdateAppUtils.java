@@ -90,13 +90,13 @@ public class UpdateAppUtils {
     }
 
     public UpdateAppUtils showNotification(boolean showNotification){
-        this.showNotification = showNotification;
+        UpdateAppUtils.showNotification = showNotification;
         return this;
     }
 
     public UpdateAppUtils showProgress(boolean showProgress){
-        this.showProgress = showProgress;
-        if (this.showNotification)
+        UpdateAppUtils.showProgress = showProgress;
+        if (showNotification)
             mProgressDialog = new AppUpdateProgressDialog(activity);
         return this;
     }
@@ -222,9 +222,7 @@ public class UpdateAppUtils {
         ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         if (cm != null) {
             NetworkInfo networkInfo = cm.getActiveNetworkInfo();
-            if (networkInfo != null && networkInfo.getType() == ConnectivityManager.TYPE_WIFI) {
-                return true;
-            }
+            return networkInfo != null && networkInfo.getType() == ConnectivityManager.TYPE_WIFI;
         }
         return false;
     }

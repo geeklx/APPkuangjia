@@ -101,8 +101,8 @@ public class ImagePickerAdapter extends RecyclerView.Adapter<ImagePickerAdapter.
 
         public SelectedPicViewHolder(View itemView) {
             super(itemView);
-            iv_x = (ImageView) itemView.findViewById(R.id.iv_x);
-            iv_img = (ImageView) itemView.findViewById(R.id.iv_img);
+            iv_x = itemView.findViewById(R.id.iv_x);
+            iv_img = itemView.findViewById(R.id.iv_img);
         }
 
         public void bind(int position) {

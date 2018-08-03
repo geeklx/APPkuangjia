@@ -197,28 +197,28 @@
         </activity>
         <activity android:name=".recycleviewalluses.demo1baseadpterhelp.BaseRecActDemo1">
             <intent-filter>
-                <action android:name="com.BaseRecActDemo1.act" />
+                <action android:name="com.BaseRecActDemo11.act" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity android:name=".recycleviewalluses.demo2baseadpterhelp.BaseRecActDemo2">
             <intent-filter>
-                <action android:name="com.BaseRecActDemo2.act" />
+                <action android:name="com.BaseRecActDemo22.act" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity android:name=".recycleviewalluses.demo3baseadpterhelp.BaseRecActDemo3">
             <intent-filter>
-                <action android:name="com.BaseRecActDemo3.act" />
+                <action android:name="com.BaseRecActDemo33.act" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity android:name=".recycleviewalluses.demo4baseadpterhelp.BaseRecActDemo4">
             <intent-filter>
-                <action android:name="com.BaseRecActDemo4.act" />
+                <action android:name="com.BaseRecActDemo44.act" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
@@ -239,28 +239,35 @@
         </activity>
         <activity android:name=".recycleviewalluses.demo5baseadpterhelp.BaseRecActDemo5">
             <intent-filter>
-                <action android:name="com.BaseRecActDemo5.act" />
+                <action android:name="com.BaseRecActDemo55.act" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity android:name=".recycleviewalluses.demo6baseadpterhelp.BaseRecActDemo6">
             <intent-filter>
-                <action android:name="com.BaseRecActDemo6.act" />
+                <action android:name="com.BaseRecActDemo66.act" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity android:name=".recycleviewalluses.demo7baseadpterhelp.BaseRecActDemo7">
             <intent-filter>
-                <action android:name="com.BaseRecActDemo7.act" />
+                <action android:name="com.BaseRecActDemo77.act" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity android:name=".recycleviewalluses.demo8baseadpterhelp.BaseRecActDemo8">
             <intent-filter>
-                <action android:name="com.BaseRecActDemo8.act" />
+                <action android:name="com.BaseRecActDemo88.act" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".recycleviewalluses.demo9baseadpterhelp.BaseRecActDemo9">
+            <intent-filter>
+                <action android:name="com.BaseRecActDemo99.act" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
@@ -315,7 +322,10 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".uploadpic.UploadPicActivity">
+        <activity
+            android:name=".uploadpic.UploadPicActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/ImagePickerThemeFullScreen">
             <intent-filter>
                 <action android:name="hs.act.phone.uploadpic" />
 
