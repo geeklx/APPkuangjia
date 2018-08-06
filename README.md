@@ -1,3 +1,5 @@
+# 梁肖51CTO博客：http://blog.51cto.com/liangxiao
+# Android业务组件库：http://blog.51cto.com/liangxiao/2146536
 # APP框架
 多渠道打包和闭包，支持分包安装，UI独立，网络请求独立
 此项目还有一些不完善的地方，可以留言或如有疑问请看地址：https://blog.csdn.net/qibin0506/article/details/71307301
